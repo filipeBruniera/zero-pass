@@ -1,0 +1,36 @@
+// render.yaml (infraestrutura Render)
+services:
+  - type: web
+    name: zero-pass
+    env: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+            name: zeropass
+            property: host
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        fromDatabase:
+            name: zeropass
+            property: database
+      - key: DB_USERNAME
+        fromDatabase:
+            name: zeropass
+            property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+            name: zeropass
+            property: password
+
+databases:
+  - name: zeropass
+    plan: free
