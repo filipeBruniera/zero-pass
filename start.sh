@@ -1,4 +1,3 @@
-// start.sh (script de inicialização)
 #!/bin/sh
 set -e
 
