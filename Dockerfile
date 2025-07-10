@@ -1,4 +1,3 @@
-// Dockerfile para Render (Laravel + PHP-FPM + Nginx)
 FROM php:8.3-fpm
 
 # Instala dependências
